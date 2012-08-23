@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<game ruleset="6170-spring-2006">
+  <time timed="true" initWhite="180000" initBlack="180000" currentWhite="133702" currentBlack="132798" />
+  <moveHistory>
+    <move side="white" value="b1-a3" time="180000" />
+    <move side="black" value="b7-b5" time="180000" />
+    <move side="white" value="a3-b5" time="180000" />
+    <move side="black" value="g7-g6" time="175609" />
+    <move side="white" value="b5-a7" time="179985" />
+    <move side="black" value="a8-a7" time="171499" />
+    <move side="white" value="a1-b1" time="173532" />
+    <move side="black" value="a7-a2" time="170030" />
+    <move side="white" value="b2-b4" time="167079" />
+    <move side="black" value="a2-c2" time="167890" />
+    <move side="white" value="d1-c2" time="160625" />
+    <move side="black" value="f7-f6" time="164500" />
+    <move side="white" value="c2-c7" time="160609" />
+    <move side="black" value="d8-c7" time="153235" />
+    <move side="white" value="c1-b2" time="153890" />
+    <move side="black" value="c7-h2" time="149610" />
+    <move side="white" value="h1-h2" time="147155" />
+    <move side="black" value="f8-g7" time="146126" />
+    <move side="white" value="b2-f6" time="140436" />
+    <move side="black" value="e7-f6" time="139126" />
+    <move side="white" value="h2-h7" time="133733" />
+  </moveHistory>
+  <pieces>
+    <square id="b1" side="white" piece="rook" />
+    <square id="e1" side="white" piece="king" />
+    <square id="f1" side="white" piece="bishop" />
+    <square id="g1" side="white" piece="knight" />
+    <square id="d2" side="white" piece="pawn" />
+    <square id="e2" side="white" piece="pawn" />
+    <square id="f2" side="white" piece="pawn" />
+    <square id="g2" side="white" piece="pawn" />
+    <square id="b4" side="white" piece="pawn" />
+    <square id="f6" side="black" piece="pawn" />
+    <square id="g6" side="black" piece="pawn" />
+    <square id="d7" side="black" piece="pawn" />
+    <square id="g7" side="black" piece="bishop" />
+    <square id="h7" side="white" piece="rook" />
+    <square id="b8" side="black" piece="knight" />
+    <square id="c8" side="black" piece="bishop" />
+    <square id="e8" side="black" piece="king" />
+    <square id="g8" side="black" piece="knight" />
+    <square id="h8" side="black" piece="rook" />
+  </pieces>
+</game>

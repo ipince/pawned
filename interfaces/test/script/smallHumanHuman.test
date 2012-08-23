@@ -1,0 +1,14 @@
+# Small test for human-human game development
+StartNewGame human 20 human 20
+PrintBoard
+GetNextMove
+MakeNextMove
+GetTime white
+GetTime black
+MakeMove c2-c4 2
+GetTime white
+PrintBoard
+IsLegalMove c3-c4
+MakeMove d7-d5 4
+PrintBoard
+PrintAllMoves

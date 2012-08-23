@@ -1,0 +1,13 @@
+# Invalid input in MakeNextMove command
+StartNewGame human 0 human 0
+MakeNextMove in
+MakeNextMove in in
+StartNewGame computer 0 computer 0
+MakeNextMove in
+MakeNextMove in in
+StartNewGame human 0 computer 0
+MakeNextMove in
+MakeNextMove in in
+StartNewGame computer 0 human 0
+MakeNextMove in
+MakeNextMove in in

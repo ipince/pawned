@@ -1,0 +1,46 @@
+
+Julian's plan:
+
+Week 04/13 to 04/20
+Started reading about SWT in web tutorials and documentation in order to decide 
+if it was a good idea to implement the GUI with SWT. 
+
+Next week:
+Saturday 21: Create a simple GUI for Pawned using SWT. If it is not that 
+difficult to learn, then use SWT to start implementing the whole GUI.
+Write tests for Piece, Board, RectangularBoard, Action.
+
+Sunday 22: Continue writing tests, and continue work with the GUI.
+
+Monday 23: Finish a preliminary version of the GUI, with the basic functionality.
+
+
+Week 04/20 to 04/27
+Implemented GraphicUI, almost all basic functionality (File Menu, with new game 
+window, load game window, save game window, and quit window). All data from the 
+new game and load windows is send to the methods initializeGame() and 
+initializeSavedGame(), respectively. Piece movement in the board is also
+implemented. There is a method for drawing pieces anywhere in the board. The
+method setUpBoardForMove takes a list of valid moves, and constrains what the
+user can click and change in the board. Also, when the user puts the mouse over
+a piece that can move, the possible end cells are highlighted.
+To see an example of this working, select "Pawn Someone" in the Pawn menu. You 
+can see in the board the possible moves of a pawn, knight, and bishop. After
+making a move, the move is displayed in the console. The "Pawn someone" option
+allows you to make only one move. "Pawn someone" can be clicked again to restart
+the example. The code that makes this example starts around line 247.
+
+For next week:
+Saturday: (? - not sure if we need to have that for Tuesday)
+	make the timers in the GUI 
+	display captured pieces? 
+	display move history?
+	help with the other parts of the program
+Sunday: 
+	help with the other parts of the program
+	start integrating game to the GUI
+Monday:
+	everything for the preliminary release has to be almost done
+	
+End of week 04/20 to 04/27			 
+ 

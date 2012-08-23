@@ -1,0 +1,18 @@
+Policy for Final Project
+
+CVS:
+
+- Never commit code that will not compile or not work
+- Always leave a comment explaining what you are committing
+- Perform regression tests after every time you commit to check if your codes
+breaks some previously existing code.
+
+Code:
+
+- Do not write sucky code
+- Always comment any assumptions made, and make nice specs (improve them too)
+
+General:
+
+- Since Eclipse has no "word wrap", to make our files print without lines being
+broken, never write characters past position 81 in any given line.

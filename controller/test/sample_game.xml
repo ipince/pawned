@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<game ruleset="6170-spring-2007">
+
+  <!--
+    explains that the game is timed (as opposed to untimed)
+    and that white started with 300000 milliseconds (or 5 minutes)
+    as did black, but at the time that the game was saved,
+    each player only had 4 minutes and 50 seconds left
+    on his or her clock
+  -->
+  <time timed="true"
+        initWhite="300000"
+        initBlack="300000"
+        currentWhite="290000"
+        currentBlack="290000" />
+
+  <!--
+    a history of the moves of the game, in order,
+    along with the amount of time remaining
+    on the clock of the player who made the move,
+    in milliseconds
+  -->
+  <moveHistory>
+    <move side="white" value="c2-c3" time="299000" />
+    <move side="black" value="c7-c6" time="299000" />
+    <move side="white" value="b2-b3" time="298000" />
+    <move side="black" value="b8-a6" time="298000" />    
+    <move side="white" value="b3-b4" time="297000" />
+    <move side="black" value="a6-b4" time="297000" />
+    <move side="white" value="c3-b4" time="296000" />
+    <move side="black" value="c6-c5" time="296000" />
+    <move side="white" value="b4-c5" time="295000" />
+    <move side="black" value="b7-b6" time="295000" />
+    <move side="white" value="c5-b6" time="294000" />
+    <move side="black" value="d8-b6" time="294000" />
+    <move side="white" value="f2-f3" time="293000" />
+    <move side="black" value="b6-b1" time="293000" />
+    <move side="white" value="a1-b1" time="292000" />
+    <move side="black" value="a8-b8" time="292000" />
+    <move side="white" value="b1-b8" time="291000" />
+    <move side="black" value="g7-g6" time="290000" />
+    <move side="white" value="b8-c8" time="290000" />
+  </moveHistory>
+
+  <!--
+    the location for each piece on the board
+    at the time the game was saved
+  -->
+  <pieces>
+    <square id="c8" side="white" piece="rook" />
+    <square id="e8" side="black" piece="king" />
+    <square id="f8" side="black" piece="bishop" />
+    <square id="g8" side="black" piece="knight" />
+    <square id="h8" side="black" piece="rook" />
+    <square id="a7" side="black" piece="pawn" />
+    <square id="d7" side="black" piece="pawn" />
+    <square id="e7" side="black" piece="pawn" />
+    <square id="f7" side="black" piece="pawn" />
+    <square id="h7" side="black" piece="pawn" />
+    <square id="g6" side="black" piece="pawn" />
+    <square id="f3" side="white" piece="pawn" />
+    <square id="a2" side="white" piece="pawn" />
+    <square id="d2" side="white" piece="pawn" />
+    <square id="e2" side="white" piece="pawn" />
+    <square id="g2" side="white" piece="pawn" />
+    <square id="h2" side="white" piece="pawn" />
+    <square id="c1" side="white" piece="bishop" />
+    <square id="d1" side="white" piece="queen" />
+    <square id="e1" side="white" piece="king" />
+    <square id="f1" side="white" piece="bishop" />
+    <square id="g1" side="white" piece="knight" />
+    <square id="h1" side="white" piece="rook" />
+  </pieces>
+
+  <!--
+    this element is present because the game was over
+    when this game was saved (thus, this element would
+    not in appear in a file for a game that was not yet over
+    at the time the file was saved)
+    
+    this indicates that white won the game by checkmating
+    black's king
+  -->
+  <gameOver winner="white" description="checkmate" />
+  
+</game>

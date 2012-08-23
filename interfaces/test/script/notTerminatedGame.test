@@ -1,0 +1,27 @@
+StartNewGame human 0 human 0
+MakeMove b2-b3 0
+MakeMove b7-b5 0
+MakeMove a2-a4 0
+MakeMove b5-a4 0
+MakeMove b3-a4 0
+MakeMove g7-g6 0
+MakeMove g2-g3 0
+MakeMove f8-h6 0
+MakeMove f2-f3 0
+MakeMove h6-d2 0
+MakeMove d1-d2 0
+MakeMove g8-h6 0
+MakeMove d2-d7 0
+MakeMove c8-d7 0
+MakeMove c1-h6 0
+MakeMove d7-a4 0
+MakeMove a1-a4 0
+MakeMove b8-a6 0
+MakeMove a4-a6 0
+MakeMove g6-g5 0
+MakeMove a6-a7 0
+MakeMove a8-a7 0
+MakeMove h6-g5 0
+MakeMove d8-d2 0
+MakeMove e1-d2 0
+#QuitGame

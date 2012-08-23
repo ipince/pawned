@@ -1,0 +1,50 @@
+\section{Evaluation}
+\section{Lessons}
+
+\section{Known bugs and limitations}
+	\subsection{Captured pieces} 
+	The definition of a captured piece in a board is the following: When a ply is executed on a board, if a piece that 
+	was inside a board before the ply was executed is no longer in the board when the ply finished, then the ply is
+	considered `captured'. However, this interpretation cannot fully incorporate particular requirements for the games.
+	
+	For example, in chess, it is not necessarily true that a pawn that has been coronated is `captured'. However,
+	according to the definition, this piece would actually be captured. Further, some games do not consider the notion
+	of captured pieces (e.g. connect four), so such functionality is not particularly useful. 
+	
+	A possible solution for this problem could be to include this information in the set of objects of type
+	\texttt{GameMessage}. However, further analysis of this problem is required to provide a full solution.
+	
+	\subsection{GUI Threading}
+	As mentioned before, the GUI behaves poorly under stress testing. Although the situation in which players
+	move almost instantaneously is very unlikely, this situation could bring undefined results in a slow computer
+	under heavy load. However, the GUI must be inspected to ensure proper thread management. 
+	
+	\subsection{AI Player}
+	Currently, the AI Player uses a minimax algorithm in order to fulfill the parallelizability requirement. 
+	Because this algorithm is very easily transofmred into a concurrent algorithm, performance increases almost
+	by about as much as the increase in the number of processors. 
+	
+	However, in doing so, the AI Player fails to use any optimization for the minimax algorithm, such as 
+	$\alpha \beta$ pruning. Since $\alpha \beta$ pruning requires a sequential depth-first search on the 
+	game tree, it is hard to obtain satisfactory results while parallelizing, since a naive parallelization 
+	would require computation of more nodes than what would be required in a sequential algorithm. 
+	
+	In order to produce a satisfactory AI Player, the AI Player should build a transposition table that is
+	concurently available and modifiable by all the concurrent threads. However, time constraints did not 
+	allow the implementation of such a system. Although the minimax algorithm does fulfill the requirement
+	of using the power of parallel processors, its expected performance is poor. 
+
+
+\subsection{A final note on extensibility}\label{final-extensibility}
+
+\emph{Pawned} constanatly attempts to provide an extensible environment for game execution. The controller
+will always  ensure that the game is played following the rules from the rule set. 
+However, to do so, the objects that hold a reference
+to the instantiated controller keep an implicit promise not to modify the board in play. However, for a 
+publishable API, this behavior might be very dangerous. For example, consider an Internet enabled version of the controller, 
+such that external developers can create \texttt{GameObservers} and \texttt{Players}. Malicious attacks would be easily 
+carried out by modifying the board in play with arbitrary plies, thus rendering the game unplayable. 
+
+However, this situation is easily solvable by cloning the board whenever it is requested, instead
+of providing the player with the actual board. This feature was not included on this version of \emph{Pawned} since
+it can be guaranteed that none of the UIs will ever modify the board directly. 

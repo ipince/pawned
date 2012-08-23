@@ -1,0 +1,189 @@
+\section{Strategy}
+
+	\subsection{Testing of \texttt{engine.adt}}
+	Testing \texttt{engine.adt} posed the problem that the majority of its classes are not fully implemented (some methods
+	are abstract). In order to solve this problem, basic types of each abstract class were created and those classes 
+	were unit tested. 
+	
+	\texttt{CountingPiece} and \texttt{SimplePiece} are two pieces that were developed to test board operations and functionality 
+	of the board's messaging systems. Special attention was paid to ensuring that the order of the messages behaved
+	in a manner consistent with the specification, and also that the pieces were successfully added, removed, and cloned
+	within the board, ensuring that the specifications are met on all the different possible states of a board position
+	(unusable, empty, and occupied).  
+	
+	In order to provide a board concrete class, \texttt{UselessBoard} and \texttt{LineBoard}, 0 and 1 dimensional boards, 
+	respectively, were created in order to place the implemented pieces for testing. 	
+	
+	\subsection{Testing of \texttt{RectangularBoard}} In order to test the rectangular board, a test driver was developed.
+	This test driver is capable of creating boards and adding pieces to it. The addition and removal of pieces was carried 
+	out under different circumpstances (on unusable, empty, and unoccupied cells) and the behavior was tested for 
+	compliance with the specification. 
+	
+	\subsection{Testing of \texttt{StdACRuleSet}} Several unit tests were implemented for each piece in \emph{Standard 
+												6.170 Antichess} and \emph{6.170 Antichess with Castling}. A rectangular board was set up with 
+												different configurations of pieces, and each piece was queried for its valid plies, 
+												comparing them against their expected results. 
+												
+												Additionally, the ruleset's global filtering was tested using a similar mechanism.
+												
+	\subsection{Testing of \texttt{controller.*}}The components of the controller package (StopWatch and TurnCycle) 
+						were tested separately. Controller was tested along with the GUI, both in regular and in stress 
+						testing. The XML Factories were tested using unit tests as well. 
+
+	\subsection{Testing of \texttt{Game} and \texttt{TextUI}} \texttt{TextUI} and \texttt{Game} were tested together. 
+	Since \texttt{TextUI} is a wrapper directly built on top of \texttt{Game}. 
+	
+	\subsection{Testing of the GUI} Since the development of the Graphical User Interface could not wait until 
+	the remainder of the game was finished, a temporary controller lookalike: \texttt{Kontroller}, was developed 
+	to simulate calls by controller to the GUI. This top-down approach to the GUI development allowed for an early
+	set of initial tests on the user interface.
+	
+		The GraphicUI tests consist of hand made tests carefully chosen and recorded
+		to prove the functionality of \emph{Pawned}. An scenario will be described in 
+		detail, and then we will check that the GraphicUI behaves as expected.
+				
+		\subsection{Opening \textit{Pawned}} 
+		
+		Three menus are enabled, with the following submenus: 
+		\begin{itemize}
+			\item File: \textit{New Game}, \textit{Save Game}, \textit{Load Game}, and 
+									\textit{Quit}
+			\item Game: \textit{End Game} and \textit{Display Options}  
+			\item Help: \textit{User Manual} and \textit{About}
+		\end{itemize}
+		
+		The Save Game and End Game options in the menus are disabled.
+		Each submenu except \textit{Display Options} will open a new window. 
+		\textit{Display Options} contains a submenu with three options that can be 
+		checked individualy (Highlight Movable Pieces, Hightlight Possible Moves, 
+		Highlight Last Move). These options are disable from user selection before 
+		starting a game.
+		
+		There is a ToolBar with one button for each of the following options:
+		New Game, Load Game, Save Game, and End Game. The Save Game and End Game
+		buttons are disabled.
+		
+		The window can be minimized and closed using the small buttons in the
+		upper corner of the window. Maximize is disabled. The main panel 
+		should be empty.
+		
+		The following hot keys are enabled:
+				\begin{itemize}
+					\item New Game - Ctrl + N
+					\item Load Game - Ctrl + O
+					\item User Manual - Ctrl + U
+					\item Quit - Ctrl + Q
+				\end{itemize}		
+		 
+		 
+		\subsubsection{New Game}
+			The New Game window can be accessed by either the New Game option in 
+			the File menu of the button in the toolbar. For each of the players
+			the New Game window has:
+			\begin{itemize}
+					\item Text field to input the player's name (max 8 char)
+					\item Radio buttons to select between Human or Computer
+					\item Combo box to select the intelligence level of the Computer
+								player (Baby, Kid, Adolescence)
+					\item Checkbox to select Timed game 
+					\item Spinners to input the time (one spinner for minutes and 
+								another for seconds)
+				\end{itemize}
+			If the Computer radio button is selected, the computer level combo box is enabled.
+			Otherwise it is disabled. If the Timed checkbox is selected, then the 
+			Time spinners are enabled and can receive an input. Otherwise they 
+			are disabled. The spinners are set to receive only a number from 0 to 60 for 
+			minutes and from 0 to 59 for seconds.
+			
+			The New Game window also contains a combo box where the user can select the 
+			type of game desired (Standard Antichess, EnCastle Antichess, and Connect N).
+			When this window is opened, the default game selected is Standard Antichess and
+			two pawn images are displayed, one pawn of each color, to identify the players. 
+			If EnCastle Antichess is selected everything stays the same. If Connect N is 
+			selected, the pawns change to a red chip and a black chip. A spinner appears to
+			the right of the game type combo where the user can select the value \textsl{n} 
+			for the Connect N game. The spinner will let you to enter values from 2 to 7.
+			
+			\subsection{Load Game}
+			
+			This window is very similar to the New Game window. The differences are:
+				\begin{itemize}
+					\item There is a read-only text field and a Browse button. The Browse
+								button opens a file dialog window that is set to filter XML files.
+								The text field is updated after the file is selected from the file
+								dialog. 
+					\item The Timed checkbox is disable, along with the Time spinner fields.
+					\item The game type combo box is disabled.
+				\end{itemize}
+				
+			After selecting a file in the File dialog, the Load Window will refresh and
+			show some information about the file selected (assuming the file is valid).
+			If the saved game was untimed, then the Timed checkboxs will be unchecked and
+			the Time fields disabled. If one of the players was set up with limited time, 
+			then its Timed checkbox will be checked and the Time fields will display the
+			remaining time it has for playing. If both players were timed, then this
+			information will be updated for both. At this point \emph{Pawned} will allow 
+			the user to change these options. 
+			
+			The game type combo box will also be updated with the type of game of the 
+			saved file. However, this field will always remain disabled. The spinner for
+			selecting the \textsl{n} value for Connect N also remains diabled, but it
+			refreshes an shows the n value of a saved Connect N game.
+			
+			Cases to test for each type of game:
+			\begin{itemize}
+					\item Untimed game
+					\item Only one player untimed.
+					\item Two timed players.
+				\end{itemize}
+			
+			Other things to test:			
+			\begin{itemize}
+					\item If a non existing file is chosen in the File dialog, display an 
+								error message box.
+					\item If 'OK' is clicked without selecting a file display an error message
+								box.
+					\item If a corrupted file is tried to be loaded, display an error message box.
+				\end{itemize}
+
+
+			\subsection{Starting new games and changing from game type to game type}
+			
+			\emph{Pawned} allows you to change from two game environments that are further 
+			apart from each other than two variations of Chess. The GraphicUI was tested to 
+			assure the ease of this change.		
+	
+	\subsection{Controller-GUI stress testing}
+		In order to test a correct threading and concurrency implementation, several matches between extremely fast
+		random players were run, which return their moves immediately after they are queried. At the controller level, 
+		it was tested that 
+		\begin{itemize}
+			\item A controller is successfully initialized, both starting a new game or loading an XML game,
+					  even when the players will immediately respond to a request. 
+			\item A game can be saved when players are engaged in a very fast gaming activity.
+			\item A controller successfully terminates a game when players are engaged in very fast playing.
+			\item The sets of captured pieces and plies do not become inconsistent when the players 
+						are exercising moves very fast.
+		\end{itemize}
+		
+		The previous items were run with delays on different parts of the code (e.g. the \texttt{RunCycle} 
+		in charge of turn management, the \texttt{inform(Ply ply)} method in \texttt{Controller}, in charge
+		of notifying the players of the plies as they are executed by the players. 
+		
+		The \texttt{StopWatch} objects were tested for accuracy to within $5$ ms under regular and heavy 
+		CPU load. Additionally, tests were run to ensure that the pauses and starts are responsive to within 
+		1 millisecond in a \emph{Centrino Duo, 1.66 GHz}, as well as a \emph{Centrino, 1.5 GHz} machine. 
+		Finally, a stopwatch test on an interval of \texttt{Integer.MAXVALUE} was carried out to test 
+		border cases for the stop watch. 
+		
+		All these tests were successful. 
+		
+		In the same way, the GUI was tested under similar conditions, in order to ensure appropriate behavior, 
+		even under extreme conditions. Games were saved and loaded one after another, and while games with the
+		fast random player were being carried out. Although several tests were successful, some race conditions
+		were detected, as well as some deadlocks under certain stringent conditions. For example, when a game is
+		being played by extremely fast random players, and the termination condition is launched exactly at the time
+		in which a person is choosing a file in the second dialog of the GUI, the main window comes to a halt. 
+		This situation is solved whenever the players take longer than 10 ms to make a move. 
+		
+		

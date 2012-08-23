@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- ruleset: the name of a variation of antichess
+     examples: 6170-spring-2007 -->
+<xs:simpleType name="ruleset">
+ <xs:restriction base="xs:string" />
+</xs:simpleType>
+
+<!-- side: the side that the antichess player is on
+     examples: white, black -->
+<xs:simpleType name="side">
+ <xs:restriction base="xs:string">
+  <xs:enumeration value="white" />
+  <xs:enumeration value="black" />
+ </xs:restriction>
+</xs:simpleType>
+
+<!-- piece: the name of a piece
+     examples: pawn, rook, knight, bishop, queen, king -->
+<xs:simpleType name="piece">
+ <xs:restriction base="xs:string">
+  <xs:enumeration value="pawn" />
+  <xs:enumeration value="rook" />
+  <xs:enumeration value="knight" />
+  <xs:enumeration value="bishop" />
+  <xs:enumeration value="queen" />
+  <xs:enumeration value="king" />
+ </xs:restriction>
+</xs:simpleType>
+
+<!-- square: the id for a square
+     examples: a1, f8, g7 -->
+<xs:simpleType name="square">
+ <xs:restriction base="xs:string">
+  <xs:pattern value="[a-h][1-8]" />
+ </xs:restriction>
+</xs:simpleType>
+
+<!-- move: a move from one square to another
+     examples: c2-c3, a1-a8 -->
+<xs:simpleType name="move">
+ <xs:restriction base="xs:string">
+  <xs:pattern value="[a-h][1-8]-[a-h][1-8]" />
+ </xs:restriction>
+</xs:simpleType>
+
+<!-- gameEnd: the way in which a game ended
+     examples: piecesLost, checkmate, stalemate -->
+<xs:simpleType name="gameEnd">
+ <xs:restriction base="xs:string">
+  <xs:enumeration value="piecesLost" />
+  <xs:enumeration value="checkmate" />
+  <xs:enumeration value="stalemate" />
+  <xs:enumeration value="timeExpired" />
+ </xs:restriction>
+</xs:simpleType>
+
+<!-- timeInMillis: an amount of time, in milliseconds
+     examples: 300000 is five minutes -->
+<xs:simpleType name="timeInMillis">
+ <xs:restriction base="xs:integer" />
+</xs:simpleType>
+
+<!-- extension type: a way to extend this schema in the future
+     with additional elements. -->
+<xs:complexType name="extensionType">
+ <xs:sequence>
+  <xs:any namespace="##any" processContents="lax"
+          minOccurs="1" maxOccurs="unbounded" />
+ </xs:sequence>
+ <xs:anyAttribute namespace="##any" processContents="lax" />
+</xs:complexType>
+
+<!-- root of the game xml file -->
+<xs:element name="game">
+ <xs:complexType>
+  <xs:sequence>
+  
+    <xs:element name="time">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="extension" minOccurs="0" type="extensionType" />
+      </xs:sequence>
+      <xs:attribute name="timed" type="xs:boolean" default="false" />
+      <xs:attribute name="initWhite" type="timeInMillis" />
+      <xs:attribute name="initBlack" type="timeInMillis" />
+      <xs:attribute name="currentWhite" type="timeInMillis" />
+      <xs:attribute name="currentBlack" type="timeInMillis" />
+      <xs:anyAttribute namespace="##any" processContents="lax" />
+     </xs:complexType>
+    </xs:element>
+
+    <xs:element name="moveHistory">
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element name="move" minOccurs="0" maxOccurs="unbounded">
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element name="extension" minOccurs="0" type="extensionType" />
+          </xs:sequence>
+          <xs:attribute name="side" type="side" use="required" />
+          <xs:attribute name="value" type="move" use="required" />
+          <xs:attribute name="time" type="timeInMillis" />
+          <xs:anyAttribute namespace="##any" processContents="lax" />
+         </xs:complexType>
+        </xs:element>
+       </xs:sequence>
+      <xs:anyAttribute namespace="##any" processContents="lax" />
+      </xs:complexType>
+    </xs:element>
+
+    <xs:element name="pieces">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="square" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+         <xs:sequence>
+          <xs:element name="extension" minOccurs="0" type="extensionType" />
+         </xs:sequence>
+         <xs:attribute name="id" type="square" use="required" />
+         <xs:attribute name="side" type="side" use="required" />
+         <xs:attribute name="piece" type="piece" use="required" />
+         <xs:anyAttribute namespace="##any" processContents="lax" />
+        </xs:complexType>
+       </xs:element>
+      </xs:sequence>
+     <xs:anyAttribute namespace="##any" processContents="lax" />
+     </xs:complexType>
+    </xs:element>
+
+    <xs:element name="gameOver" minOccurs="0">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="extension" minOccurs="0" type="extensionType" />
+      </xs:sequence>
+      <xs:attribute name="winner" type="side" />
+      <xs:attribute name="description" type="gameEnd" use="required" />
+      <xs:anyAttribute namespace="##any" processContents="lax" />
+     </xs:complexType>
+    </xs:element>
+
+    <xs:element name="extension" minOccurs="0" type="extensionType" />
+    
+  </xs:sequence>
+  
+  <xs:attribute name="ruleset" type="ruleset" use="required" />
+  <xs:anyAttribute namespace="##any" processContents="lax" />
+
+ </xs:complexType>
+</xs:element>
+
+</xs:schema>

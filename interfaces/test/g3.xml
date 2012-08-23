@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<game ruleset="6170-spring-2006">
+  <time timed="true" initWhite="180000" initBlack="180000" currentWhite="103219" currentBlack="27968" />
+  <moveHistory>
+    <move side="white" value="b2-b3" time="180000" />
+    <move side="black" value="b7-b5" time="180000" />
+    <move side="white" value="a2-a4" time="180000" />
+    <move side="black" value="b5-a4" time="173875" />
+    <move side="white" value="b3-a4" time="178984" />
+    <move side="black" value="g7-g6" time="173859" />
+    <move side="white" value="g2-g3" time="178063" />
+    <move side="black" value="f8-h6" time="167484" />
+    <move side="white" value="f2-f3" time="173453" />
+    <move side="black" value="h6-d2" time="161140" />
+    <move side="white" value="d1-d2" time="159000" />
+    <move side="black" value="g8-h6" time="161125" />
+    <move side="white" value="d2-d7" time="158000" />
+    <move side="black" value="c8-d7" time="154500" />
+    <move side="white" value="c1-h6" time="154422" />
+    <move side="black" value="d7-a4" time="147921" />
+    <move side="white" value="a1-a4" time="151797" />
+    <move side="black" value="b8-a6" time="147906" />
+    <move side="white" value="a4-a6" time="149078" />
+    <move side="black" value="g6-g5" time="141015" />
+    <move side="white" value="a6-a7" time="147313" />
+    <move side="black" value="a8-a7" time="134109" />
+    <move side="white" value="h6-g5" time="143734" />
+    <move side="black" value="d8-d2" time="134094" />
+    <move side="white" value="e1-d2" time="141906" />
+    <move side="black" value="e8-g8" time="126828" />
+    <move side="white" value="g5-e7" time="136672" />
+    <move side="black" value="g8-h8" time="119562" />
+    <move side="white" value="e7-f8" time="133750" />
+    <move side="black" value="c7-c5" time="112297" />
+    <move side="white" value="f8-c5" time="132078" />
+    <move side="black" value="h7-h5" time="105031" />
+    <move side="white" value="c5-a7" time="129859" />
+    <move side="black" value="h5-h4" time="97766" />
+    <move side="white" value="g3-h4" time="125624" />
+    <move side="black" value="h8-h7" time="90501" />
+    <move side="white" value="f3-f4" time="123780" />
+    <move side="black" value="h7-g8" time="83235" />
+    <move side="white" value="g1-f3" time="120030" />
+    <move side="black" value="g8-f8" time="75985" />
+    <move side="white" value="a7-c5" time="118843" />
+    <move side="black" value="f8-e8" time="68719" />
+    <move side="white" value="h1-g1" time="116890" />
+    <move side="black" value="f7-f6" time="61485" />
+    <move side="white" value="g1-g7" time="115343" />
+    <move side="black" value="e8-d8" time="54250" />
+    <move side="white" value="d2-d3" time="111656" />
+    <move side="black" value="d8-c8" time="47000" />
+    <move side="white" value="d3-c4" time="110375" />
+    <move side="black" value="f6-f5" time="39750" />
+    <move side="white" value="c4-d5" time="108343" />
+    <move side="black" value="c8-b8" time="32500" />
+    <move side="white" value="d5-c6" time="105703" />
+    <move side="black" value="b8-a8" time="30250" />
+    <move side="white" value="c6-b6" time="104281" />
+    <move side="black" value="a8-b8" time="27984" />
+    <move side="white" value="g7-g8" time="103219" />
+  </moveHistory>
+  <pieces>
+    <square id="b1" side="white" piece="knight" />
+    <square id="f1" side="white" piece="bishop" />
+    <square id="c2" side="white" piece="pawn" />
+    <square id="e2" side="white" piece="pawn" />
+    <square id="h2" side="white" piece="pawn" />
+    <square id="f3" side="white" piece="knight" />
+    <square id="f4" side="white" piece="pawn" />
+    <square id="h4" side="white" piece="pawn" />
+    <square id="c5" side="white" piece="bishop" />
+    <square id="f5" side="black" piece="pawn" />
+    <square id="b6" side="white" piece="king" />
+    <square id="b8" side="black" piece="king" />
+    <square id="g8" side="white" piece="rook" />
+  </pieces>
+  <gameOver winner="white" description="checkmate" />
+</game>

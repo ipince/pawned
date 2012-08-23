@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="javadoc">
+<target name="javadoc">
+<javadoc access="public" additionalparam=" -tag requires:a:Requires: -tag modifies:a:Modifies: -tag effects:a:Effects: -tag specfield:a:SpecField:&#13;&#10;-tag return:a" author="true" classpath="lib/swtWin.jar;lib/swtLinux.jar;lib/antichess-ai.jar;lib/java6170.jar;lib/junit.jar" destdir="I:\www\pawned\api" doctitle="Pawned API" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="controller,engine.player.test,ruleset.ply.test,ruleset.test,engine.adt,ruleset.board,debug,ruleset.piece.test,engine.game,engine.adt.test,engine.exception,engine.player,interfaces,ruleset.ply,ruleset.board.test,ruleset.connect4,controller.test,ruleset.antichess,engine.game.test,ruleset.stdac,ruleset.antichess.test,ruleset.piece,interfaces.test" source="1.5" sourcepath="." splitindex="true" use="true" version="true">
+<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
+</javadoc>
+</target>
+</project>

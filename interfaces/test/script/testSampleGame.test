@@ -1,0 +1,25 @@
+# testSampleGame
+# Game provided by the staff
+StartNewGame human 0 human 60000
+IsLegalMove c2-c3
+MakeMove c2-c3 0
+MakeMove c7-c6 100
+MakeMove b2-b3 0
+MakeMove b8-a6 100
+MakeMove b3-b4 0
+PrintAllMoves
+MakeMove a6-b4 100
+MakeMove c3-b4 0
+MakeMove c6-c5 100
+MakeMove b4-c5 0
+MakeMove b7-b6 100
+MakeMove c5-b6 0
+MakeMove d8-b6 100
+MakeMove f2-f3 0
+MakeMove b6-b1 100
+MakeMove a1-b1 0
+MakeMove a8-b8 100
+MakeMove b1-b8 0
+MakeMove g7-g6 100
+GetTime black
+MakeMove b8-c8 0

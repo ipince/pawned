@@ -1,0 +1,5 @@
+# Invalid input in SaveGame command
+StartNewGame human 0 human 0
+SaveGame
+SaveGame this game
+SaveGame this saved game

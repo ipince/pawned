@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<game ruleset="6170-spring-2006">
+  <time timed="true" initWhite="180000" initBlack="180000" currentWhite="61987" currentBlack="29591" />
+  <moveHistory>
+    <move side="white" value="b2-b3" time="180000" />
+    <move side="black" value="b7-b5" time="180000" />
+    <move side="white" value="c2-c4" time="180000" />
+    <move side="black" value="b5-c4" time="173875" />
+    <move side="white" value="b3-c4" time="177172" />
+    <move side="black" value="c7-c6" time="173859" />
+    <move side="white" value="g2-g3" time="176125" />
+    <move side="black" value="d8-a5" time="167516" />
+    <move side="white" value="f2-f3" time="166812" />
+    <move side="black" value="a5-a2" time="161172" />
+    <move side="white" value="a1-a2" time="162609" />
+    <move side="black" value="d7-d5" time="154829" />
+    <move side="white" value="a2-a7" time="160468" />
+    <move side="black" value="d5-c4" time="148485" />
+    <move side="white" value="a7-e7" time="154953" />
+    <move side="black" value="e8-e7" time="142141" />
+    <move side="white" value="d1-a4" time="149047" />
+    <move side="black" value="a8-a4" time="135797" />
+    <move side="white" value="d2-d3" time="143844" />
+    <move side="black" value="c4-d3" time="135765" />
+    <move side="white" value="e2-d3" time="141126" />
+    <move side="black" value="c8-h3" time="135749" />
+    <move side="white" value="f1-h3" time="136782" />
+    <move side="black" value="a4-c4" time="128749" />
+    <move side="white" value="d3-c4" time="129610" />
+    <move side="black" value="g7-g5" time="121765" />
+    <move side="white" value="c1-g5" time="127657" />
+    <move side="black" value="e7-d6" time="114781" />
+    <move side="white" value="g5-e7" time="124938" />
+    <move side="black" value="d6-e7" time="107796" />
+    <move side="white" value="g3-g4" time="116954" />
+    <move side="black" value="g8-f6" time="100812" />
+    <move side="white" value="b1-a3" time="106594" />
+    <move side="black" value="f6-g4" time="93844" />
+    <move side="white" value="f3-g4" time="98922" />
+    <move side="black" value="f8-g7" time="93812" />
+    <move side="white" value="g4-g5" time="97501" />
+    <move side="black" value="h8-c8" time="86280" />
+    <move side="white" value="h3-c8" time="94861" />
+    <move side="black" value="g7-c3" time="78748" />
+    <move side="white" value="e1-e2" time="89190" />
+    <move side="black" value="c3-d2" time="71232" />
+    <move side="white" value="e2-d2" time="84096" />
+    <move side="black" value="h7-h5" time="63717" />
+    <move side="white" value="g5-h6" time="82971" />
+    <move side="black" value="f7-f5" time="56201" />
+    <move side="white" value="c8-f5" time="81252" />
+    <move side="black" value="b8-d7" time="48686" />
+    <move side="white" value="f5-d7" time="75345" />
+    <move side="black" value="e7-d7" time="40999" />
+    <move side="white" value="g1-e2" time="73314" />
+    <move side="black" value="d7-c8" time="40983" />
+    <move side="white" value="h1-g1" time="66908" />
+    <move side="black" value="c8-c7" time="38139" />
+    <move side="white" value="g1-g7" time="65174" />
+    <move side="black" value="c7-b8" time="35295" />
+    <move side="white" value="h6-h7" time="63424" />
+    <move side="black" value="b8-a8" time="32435" />
+    <move side="white" value="h7-h8" time="61987" />
+  </moveHistory>
+  <pieces>
+    <square id="d2" side="white" piece="king" />
+    <square id="e2" side="white" piece="knight" />
+    <square id="h2" side="white" piece="pawn" />
+    <square id="a3" side="white" piece="knight" />
+    <square id="c4" side="white" piece="pawn" />
+    <square id="c6" side="black" piece="pawn" />
+    <square id="g7" side="white" piece="rook" />
+    <square id="a8" side="black" piece="king" />
+    <square id="h8" side="white" piece="queen" />
+  </pieces>
+  <gameOver winner="white" description="checkmate" />
+</game>

@@ -1,0 +1,43 @@
+\documentclass{report}
+
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage[adobe-utopia]{mathdesign}
+\usepackage{url}
+
+\author{Juli\'{a}n Hern\'{a}ndez\\
+        Rodrigo Ipince\\
+        Jos\'{e} Mu\~{n}iz}
+\title{Pawned Game Execution Environment\\
+       Final Documentation}
+\makeindex
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	
+	\chapter{Requirements}
+		\input{requirements.tex}
+		
+	\chapter{Design}
+		\input{design.tex}
+
+	\chapter{Outstanding Assignment Observations}
+		\input{observations.tex}
+
+	\chapter{Testing}
+		\input{testing.tex}
+
+  \chapter{Reflection}
+  	\input{postmorterm.tex}
+  	
+	\appendix
+		 \chapter{Antichess Rules}\label{6170acrules}
+			\input{antichessRules.tex} 
+
+		 \chapter{TextUI Specification}\label{textuispec}
+		 \input{textUI.tex}
+	
+	\printindex
+		 
+\end{document}

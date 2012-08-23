@@ -1,0 +1,128 @@
+\documentclass{report}
+
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage[adobe-utopia]{mathdesign}
+
+\title{GraphicUI Test}
+
+	\begin{document}
+
+		
+		The GraphicUI tests consist of hand made tests carefully chosen and recorded
+		to prove the functionality of \emph{Pawned}. An scenario will be described in 
+		detail, and then we will check that the GraphicUI behaves as expected.
+				
+		\subsection{Opening \textit{Pawned}} 
+		
+		Three menus are enabled, with the following submenus: 
+		\begin{itemize}
+			\item File: \textit{New Game}, \textit{Save Game}, \textit{Load Game}, and 
+									\textit{Quit}
+			\item Game: \textit{End Game} and \textit{Display Options}  
+			\item Help: \textit{User Manual} and \textit{About}
+		\end{itemize}
+		
+		The Save Game and End Game options in the menus are disabled.
+		Each submenu except \textit{Display Options} will open a new window. 
+		\textit{Display Options} contains a submenu with three options that can be 
+		checked individualy (Highlight Movable Pieces, Hightlight Possible Moves, 
+		Highlight Last Move). These options are disable from user selection before 
+		starting a game.
+		
+		There is a ToolBar with one button for each of the following options:
+		New Game, Load Game, Save Game, and End Game. The Save Game and End Game
+		buttons are disabled.
+		
+		The window can be minimized and closed using the small buttons in the
+		upper corner of the window. Maximize is disabled. The main panel 
+		should be empty.
+		
+		The following hot keys are enabled:
+				\begin{itemize}
+					\item New Game - Ctrl + N
+					\item Load Game - Ctrl + O
+					\item User Manual - Ctrl + U
+					\item Quit - Ctrl + Q
+				\end{itemize}		
+		 
+		 
+		\subsubsection{New Game}
+			The New Game window can be accessed by either the New Game option in 
+			the File menu of the button in the toolbar. For each of the players
+			the New Game window has:
+			\begin{itemize}
+					\item Text field to input the player's name (max 8 char)
+					\item Radio buttons to select between Human or Computer
+					\item Combo box to select the intelligence level of the Computer
+								player (Baby, Kid, Adolescence)
+					\item Checkbox to select Timed game 
+					\item Spinners to input the time (one spinner for minutes and 
+								another for seconds)
+				\end{itemize}
+			If the Computer radio button is selected, the computer level combo box is enabled.
+			Otherwise it is disabled. If the Timed checkbox is selected, then the 
+			Time spinners are enabled and can receive an input. Otherwise they 
+			are disabled. The spinners are set to receive only a number from 0 to 60 for 
+			minutes and from 0 to 59 for seconds.
+			
+			The New Game window also contains a combo box where the user can select the 
+			type of game desired (Standard Antichess, EnCastle Antichess, and Connect N).
+			When this window is opened, the default game selected is Standard Antichess and
+			two pawn images are displayed, one pawn of each color, to identify the players. 
+			If EnCastle Antichess is selected everything stays the same. If Connect N is 
+			selected, the pawns change to a red chip and a black chip. A spinner appears to
+			the right of the game type combo where the user can select the value \textsl{n} 
+			for the Connect N game. The spinner will let you to enter values from 2 to 7.
+			
+			\subsection{Load Game}
+			
+			This window is very similar to the New Game window. The differences are:
+				\begin{itemize}
+					\item There is a read-only text field and a Browse button. The Browse
+								button opens a file dialog window that is set to filter XML files.
+								The text field is updated after the file is selected from the file
+								dialog. 
+					\item The Timed checkbox is disable, along with the Time spinner fields.
+					\item The game type combo box is disabled.
+				\end{itemize}
+				
+			After selecting a file in the File dialog, the Load Window will refresh and
+			show some information about the file selected (assuming the file is valid).
+			If the saved game was untimed, then the Timed checkboxs will be unchecked and
+			the Time fields disabled. If one of the players was set up with limited time, 
+			then its Timed checkbox will be checked and the Time fields will display the
+			remaining time it has for playing. If both players were timed, then this
+			information will be updated for both. At this point \emph{Pawned} will allow 
+			the user to change these options. 
+			
+			The game type combo box will also be updated with the type of game of the 
+			saved file. However, this field will always remain disabled. The spinner for
+			selecting the \textsl{n} value for Connect N also remains diabled, but it
+			refreshes an shows the n value of a saved Connect N game.
+			
+			Cases to test for each type of game:
+			\begin{itemize}
+					\item Untimed game
+					\item Only one player untimed.
+					\item Two timed players.
+				\end{itemize}
+			
+			Other things to test:			
+			\begin{itemize}
+					\item If a non existing file is chosen in the File dialog, display an 
+								error message box.
+					\item If 'OK' is clicked without selecting a file display an error message
+								box.
+					\item If a corrupted file is tried to be loaded, display an error message box.
+				\end{itemize}
+
+
+			\subsection{Starting new games and changing from game type to game type}
+			
+			\emph{Pawned} allows you to change from two game environments that are further 
+			apart from each other than two variations of Chess. The GraphicUI was tested to 
+			assure the easiness of this change.		
+
+	\end{document}

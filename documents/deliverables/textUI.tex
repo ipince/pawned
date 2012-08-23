@@ -1,0 +1,104 @@
+
+
+		Main is an interactive loop between a human and a computer. The \texttt{TextUI} should 
+		wait for user input. Valid user input is in the form of the commands shown in 
+		the requires clause. Parameters to commands are enclosed in square brackets. 
+		Outputs as a result of a command should be terminated with a newline. If 
+		multiple lines are output, the last line should also be terminated with a new 
+		line.
+
+		When main is executed with no command-line arguments, supported commands are:
+
+		\textbf{StartNewGame} \texttt{[player] [time] [player] [time]}
+    
+    Each player is denoted as 'human' or 'computer.' The times specified are the 
+    initial 'time remaining' for the player, in milliseconds. If a time argument is 
+    zero, then the playing time is unlimited. The first player is white and the second 
+    player is black. For example, StartNewGame computer 60000 human 180000 should start 
+    a new game with the computer playing as white and the human playing as black. The 
+    computer will have 1 minute to make all of its moves, and the human will have 3 
+    minutes. The system should output New game started on its own line.
+
+		\textbf{SaveGame} \texttt{[filename]}
+    
+    The system should save the game to the given filename and report Game saved on 
+    its own line.
+
+		\textbf{LoadGame} \texttt{[filename]}
+    
+    The system should load the game from the given filename. Once the files is loaded, 
+    print Game loaded on its own line. You should report Corrupt file if the file does 
+    not have a correct format. We will not require you to determine if the board is 
+    legal. If no game is currently in progress from a previously executed StartNewGame 
+    or LoadGame command, then assume a human-human game.
+
+		\textbf{GetNextMove}
+    
+    If this command is called during a human player's turn, the command prints Human 
+    turn on its own line. If this command is called during a machine player's turn, 
+    print on its own line the next move it believes to be the best. The printed move 
+    should be in the 'standard string format' described in the assignment. The time 
+    aken to compute the move should be subtracted from the computer player's game clock. 
+    If called repeatedly, this should return the same move over and over without further 
+    decrementing the computer's time remaining.
+
+		\textbf{MakeNextMove}
+    
+    If it is a human player's turn, the system should print Please specify human move 
+    on its own line. If it is the computer player's turn, and GetNextMove has not yet 
+    been called on this turn, then the system should print First GetNextMove. Otherwise, 
+    the system performs the move that GetNextMove would return. 
+		
+		\textbf{MakeMove} \texttt{[move] [time]}
+    
+    Perform the move specified by the move string, in the 'standard string format' described 
+ 	  in the assignment. The time parameter is specified in milliseconds. This command should 
+    only be used by a Human Player. If it is used during a computer player's turn, nothing 
+  	will happen to the game state and no response should be printed. If the move is not legal,
+    the system should print, on its own line, Illegal move and not perform the move. If 
+    the move is legal, the system should perform the move, decrement the player's time by 
+    the amount given, and print the move performed, in proper format, on its own line. If 
+    the player's time is unlimited, then the time argument is ignored (but must still be present).
+
+		\textbf{PrintBoard}
+    
+    System should print the current 'state' of the game to the screen using the same format 
+    as if it were being saved to a file. The output should end with (at least one) a newline.
+
+		\textbf{IsLegalMove} \texttt{[move]}
+    
+    System should print, on its own line, either 'legal' or 'illegal' to specify if the move 
+    is a legal next move.
+
+		\textbf{PrintAllMoves}
+    System should, in alphanumeric order, print all legal moves for the next player. Each move 
+    should each appear on its own line.
+		
+		\textbf{GetTime} \texttt{[player]}
+    
+    On its own line, the system should print the time remaining in milliseconds for the player 
+    specified. For example GetTime white, should print 3000 to indicate 3 seconds left for the 
+    white player. If the time for the player is unlimited, the system should print 'unlimited'.
+
+		\textbf{QuitGame}
+    
+    Prints (on its own line) Exiting game and terminates the present game and application. 
+    QuitGame cannot be the first command.
+
+		
+		For each command other than GetNextMove the specified behavior completes within 10 seconds. 
+		GetNextMove may take no more than ten seconds more than the player's time remaining to 
+		complete; if it exceeds the player's time remaining it must report a human victory in the 
+		format described below.
+
+		If the user input does not match one of these commands, output Input 
+		error alone on one line. Also, the first valid command entered must 
+		be either StartNewGame or LoadGame, or else Input error is printed.
+
+		When a player has won the game, output on its own line: [Player color] Player has won. For 
+		example, if the black player has won, output: Black Player has won. At this point, you can
+		 assume that the Antichess program has just been started and therefore, you only need to 
+		support the subset of commands.
+
+		The behavior of the TextUI is unspecified when main is run with one or more command-line arguments.
+		

@@ -1,0 +1,11 @@
+# Tests that all commands other than StartNewGame and LoadGame work properly.
+SaveGame game
+GetNextMove
+MakeNextMove
+MakeMove a1-a2
+PrintBoard
+IsLegalMove a1-a2
+PrintAllMoves
+GetTime white
+GetTime black
+QuitGame

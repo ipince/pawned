@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+<jar path="C:/Documents and Settings/reipince/Desktop/test.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/final_project/forNetTesting.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+<storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+<selectedProjects/>
+<manifest generateManifest="false" manifestLocation="/final_project/forNetTestingManifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+<sealing sealJar="true">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=final_project/&lt;engine.player"/>
+<javaElement handleIdentifier="=final_project/&lt;engine.exception"/>
+<javaElement handleIdentifier="=final_project/&lt;ruleset.board"/>
+<javaElement handleIdentifier="=final_project/&lt;ruleset.antichess"/>
+<javaElement handleIdentifier="=final_project/&lt;controller"/>
+<javaElement handleIdentifier="=final_project/&lt;engine.player.test"/>
+<javaElement handleIdentifier="=final_project/&lt;ruleset.ply"/>
+<javaElement handleIdentifier="=final_project/&lt;player"/>
+<javaElement handleIdentifier="=final_project/&lt;ruleset.eval"/>
+<javaElement handleIdentifier="=final_project/&lt;ruleset.piece"/>
+<javaElement handleIdentifier="=final_project/&lt;engine.game"/>
+<javaElement handleIdentifier="=final_project/&lt;engine.adt"/>
+</selectedElements>
+</jardesc>

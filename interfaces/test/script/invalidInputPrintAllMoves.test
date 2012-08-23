@@ -1,0 +1,13 @@
+# Invalid input in PrintAllMoves command
+StartNewGame human 0 human 0
+PrintAllMoves in
+PrintAllMoves in in
+StartNewGame computer 0 computer 0
+PrintAllMoves in
+PrintAllMoves in in
+StartNewGame human 0 computer 0
+PrintAllMoves in
+PrintAllMoves in in
+StartNewGame computer 0 human 0
+PrintAllMoves in
+PrintAllMoves in in

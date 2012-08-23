@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0+"
+	codebase="http://web.mit.edu/jchernan/www"
+	href="se46antichess.jnlp">
+	<information>
+  		<title>se46 Antichess</title>
+  		<vendor>Pawned</vendor>
+  		<homepage href="http://web.mit.edu/jchernan/www/" />
+  		<description>6.170 Final project preliminary release</description>
+  		<description>Antichess</description>
+	</information>
+
+	<security>
+		<all-permissions />
+	</security>
+
+	<resources>
+		<j2se version="1.5+" />
+		<jar href="antichess.jar" />
+	</resources>
+
+	<resources os="Windows" arch="x86">
+		<nativelib href="swt-native-win.jar" />
+		<jar href="swtWin.jar" />
+	</resources>
+
+	<application-desc main-class="interfaces.GraphicUI" />
+</jnlp>

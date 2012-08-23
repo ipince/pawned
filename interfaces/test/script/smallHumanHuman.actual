@@ -1,0 +1,35 @@
+# Small test for human-human game development
+New game started
+   r*   n*   b*   q*   k*   b*   n*   r*
+   p*   p*   p*   p*   p*   p*   p*   p*
+    o    o    o    o    o    o    o    o
+    o    o    o    o    o    o    o    o
+    o    o    o    o    o    o    o    o
+    o    o    o    o    o    o    o    o
+    p    p    p    p    p    p    p    p
+    r    n    b    q    k    b    n    r
+Human turn
+Please specify human move
+20
+20
+c2-c4
+18
+   r*   n*   b*   q*   k*   b*   n*   r*
+   p*   p*   p*   p*   p*   p*   p*   p*
+    o    o    o    o    o    o    o    o
+    o    o    o    o    o    o    o    o
+    o    o    p    o    o    o    o    o
+    o    o    o    o    o    o    o    o
+    p    p    o    p    p    p    p    p
+    r    n    b    q    k    b    n    r
+illegal
+d7-d5
+   r*   n*   b*   q*   k*   b*   n*   r*
+   p*   p*   p*    o   p*   p*   p*   p*
+    o    o    o    o    o    o    o    o
+    o    o    o   p*    o    o    o    o
+    o    o    p    o    o    o    o    o
+    o    o    o    o    o    o    o    o
+    p    p    o    p    p    p    p    p
+    r    n    b    q    k    b    n    r
+c4-d5

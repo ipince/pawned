@@ -1,0 +1,23 @@
+# Invalid inputs in MakeMove command
+StartNewGame human 0 human 0
+IsLegalMove a2-a3
+MakeMove
+MakeMove a2-a3
+MakeMove 0 a2-a3
+MakeMove a2-a3 a
+MakeMove a a2-a3
+MakeMove 0
+MakeMove a2-a3 0 0
+MakeMove a2-a3 0 b2-b3
+MakeMove a2-a3 -10
+StartNewGame human 1000 human 1000
+IsLegalMove a2-a3
+MakeMove
+MakeMove a2-a3
+MakeMove 10 a2-a3
+MakeMove a2-a3 a
+MakeMove a a2-a3
+MakeMove 10
+MakeMove a2-a3 10 10
+MakeMove a2-a3 10 b2-b3
+MakeMove a2-a3 -100

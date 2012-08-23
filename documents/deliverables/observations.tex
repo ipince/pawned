@@ -1,0 +1,61 @@
+
+\section{AiPlayer}\label{AiPlayer}
+  
+
+The specification for AiPlayer dictates that the AiPlayer should submit an empty string whenever it is not allowed to make a move.
+From the specification for \textbf{AiPlayer}: 
+
+\begin{quotation}
+Returns: the move to make. Should return an empty string if this player cannot make a move (because the opponent's move ends the game, 
+or for some other reason).
+\end{quotation} 
+
+The fulfillment of this requirement brings several issues into consideration. The choice of overall architecture, in 
+which players are exclusively asked to make a move when they are required to do so, is incompatible with the nature of 
+this specification. An implementation that could trivially support it would require direct involvement in the 
+turn management and knowledge of the specific game rules regarding termination and conditions such as \emph{stalemate}. 
+Such a direct involvement with the game requires a significant amount of coupling that can hinder the possibility to implement 
+further players or extensions to the game. Therefore, \emph{Pawned} uses a notification system in which players are asked
+to submit a move only when it is necessary for them to do so. In order to fulfill the specification, \emph{Pawned}'s implementation
+of \textbf{AiPlayer} acts as a representative for the other player in the tournament, playing in the \textbf{Controller} against
+the actual \textbf{AIPlayer}. Since \textbf{AiPlayer} is not asked to submit empty strings by \emph{Pawned}, \textbf{AiPlayer}
+uses a queuing system for the actual \textbf{AIPlayer}'s moves as they are notified from the system, in order 
+to detect and send these through it's \texttt{makeMove(move, time)} method. 
+
+For example, in a game such as \emph{N-move} chess, where each player has to play N moves during his turns, the turn delegation becomes 
+problematic. In this case, there are two options either allow the user to input all of his moves in a single string after he receives a 
+\texttt{makeMove(move, time)} call, or query him N times for a move. In the first case, the other player will be forced to submit twenty
+empty strings to the referee, thereby forcing the player to constantly report to the referee when it has no necessity to do so. Not only 
+does this result in a significant design flaw, but could also have performance repercussions in cases such as calls to the players
+via the Internet, such as \emph{RMI} invocations. On the other hand, if all the moves are input at once, then the sequential nature of the
+\texttt{makeMove(move,time)} calls is broken, making the return of an empty string seem arbitrary. 
+
+In addition, the choice to request an empty string for invalid moves makes the application more prone to failure and makes it harder to
+recover from erroneous input. Since a  player can return an invalid move when it is not his turn, \emph{makeMove(move,time)}, there
+is a chance that the player will submit some type of ply. Further, there is no way to determine the time remaining for the other player,
+so the player will be unable to submit an empty string when the game has finished as a result of time depletion, thus making the 
+player unable to completely determine whether the game is still being played or not. 
+
+it is apparent that due to this design choice, several computations are bound to be repeated. Since the referee has to verify whether a 
+move is valid or not, then he needs to determine whose turn it is, in order to predict whether a given player should have returned an 
+empty string. On the other side, each player is required to carry out this computation, since it has to determine whether it has to return 
+the empty string or not. 
+
+\section{TextUI} 
+ 
+TextUI does not make use of the asynchronous information messaging system provided by \emph{Pawned}. In fact, to an extent, 
+the requirements for TextUI and the expected functionality of \texttt{Controller} are incompatible. For example, 
+the TextUI is expected to be able to control the artificial intelligence player's movements, whereas the \texttt{Controller}
+assumes the role of ply retriever in the execution environment. For this reason, TextUI was implemented at the \texttt{Game}
+level, and not the \texttt{Controller} level. 
+
+The TextUI was extensively used as a testing mechanism for \texttt{Game}, since it is a wrapper for it, without the
+additional functionality provided by the \texttt{Controller}. However, the TextUI lacks the extensibility supported
+by the rest of the execution environment, since it is tightly coupled with assumptions regarding its role in the
+game process. For example, consider the problem of allowing players compete against each other over Internet. Since 
+the command line interface heavily relies on synchronous communication and 
+
+Further, the requirement that the players themselves submit the time they took to submit the move makes it hard to possess 
+a reliable time measurement, since an accurate measuring cannot be achieved. On the other hand, \texttt{Controller} could easily
+allow an implementation of such an addition, by implementing a particular version of \texttt{Player} which is capable of 
+communicating across the Internet. 
