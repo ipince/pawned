@@ -11,7 +11,8 @@
     "scripts": {
       "build": ["bash scripts/build.sh"],
       "run": ["bash scripts/build.sh && java -cp build/classes interfaces.TextUI"],
-      "debug": ["bash scripts/build.sh && java -cp build/classes interfaces.TextUI debug"]
+      "debug": ["bash scripts/build.sh && java -cp build/classes interfaces.TextUI debug"],
+      "test": ["bash scripts/build.sh && java -cp build/classes:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar junit.textui.TestRunner debug.AllTests"]
     }
   }
 }
