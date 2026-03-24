@@ -9,9 +9,9 @@
       "echo 'Welcome to devbox!' > /dev/null"
     ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
-      ]
+      "build": ["bash scripts/build.sh"],
+      "run": ["bash scripts/build.sh && java -cp build/classes interfaces.TextUI"],
+      "debug": ["bash scripts/build.sh && java -cp build/classes interfaces.TextUI debug"]
     }
   }
 }
