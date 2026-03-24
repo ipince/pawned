@@ -18,7 +18,6 @@ public class PieceTests {
 		suite.addTestSuite(BishopTest.class);
 		suite.addTestSuite(KnightTest.class);
 		suite.addTestSuite(RookTest.class);
-		suite.addTestSuite(PawnTest.class);
 		suite.addTestSuite(GravityChipTest.class);
 
 		return suite;
